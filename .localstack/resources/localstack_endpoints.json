@@ -1,0 +1,6 @@
+{
+  "CloudFormation": "http://localhost:4566",
+  "Lambda": "http://localhost:4566",
+  "DynamoDB": "http://localhost:4566",
+  "APIGateway": "http://localhost:4566"
+}

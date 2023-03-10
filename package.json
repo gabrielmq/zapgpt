@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "serverless-deployment-bucket": "^1.6.0",
+    "serverless-localstack": "^1.0.4"
+  }
+}

@@ -1,0 +1,38 @@
+plugins:
+  - serverless-localstack
+  - serverless-deployment-bucket
+
+service: zapgpt
+
+frameworkVersion: '3'
+
+custom:
+  localstack:
+    stages:
+      - dev
+    host: http://localhost
+    edgePort: 4566
+    endpointFile: .localstack/resources/localstack_endpoints.json
+    lambda:
+      mountCode: False
+    deploymentBucket:
+      name: zapgpt
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: dev
+  region: us-east-1
+
+package:
+  patterns:
+    - '!./**'
+    - ./bin/**
+
+functions:
+  chat:
+    handler: bin/zapgpt
+    events:
+      - http:
+          path: /chat
+          method: post
