@@ -5,7 +5,7 @@ services:
     image: localstack/localstack:1.4.0
     container_name: localstack
     environment: 
-      - SERVICES=cloudformation,apigateway,iam,dynamodb,lambda
+      - SERVICES=cloudformation,apigateway,lambda
       - AWS_DEFAULT_REGION=us-east-1
       - EAGER_SERVICE_LOADING=1
       - EDGE_PORT=4566
